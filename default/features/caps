@@ -1,7 +1,7 @@
-Packo::Features::Default.define(:caps) {
+Features::Default.define('caps') {
   description 'Use Linux capabilities library to control privilege'
 
-  on :dependencies do |package|
-    package.dependencies << 'system/libraries/libcap' if enabled?
+  before :dependencies do |deps|
+    deps << 'system/library/libcap' if enabled?
   end
 }

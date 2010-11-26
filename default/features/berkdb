@@ -1,0 +1,7 @@
+Features::Default.define('gdbm') {
+  description 'Adds support for system/library/database/berkley (Berkeley DB for MySQL)'
+
+  before :dependencies do |deps|
+    deps << 'system/library/database/berkley' if enabled?
+  end
+}

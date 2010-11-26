@@ -1,7 +1,7 @@
-Packo::Features::Default.define(:ruby) {
+Features::Default.define('ruby') {
   description 'Adds support/bindings for the Ruby language'
 
-  on :dependencies do |package|
-    package.dependencies << 'development/interpreters/ruby' if enabled?
+  before :dependencies do |deps|
+    deps << 'application/development/interpreter/ruby' if enabled?
   end
 }
