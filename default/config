@@ -1,4 +1,4 @@
-CFLAGS   = "-Os -march=native -pipe"
+CFLAGS   = "-Os -march=native -mtune=native -pipe"
 CXXFLAGS = "#{CFLAGS}"
 LDFLAGS  = "-Wl,-O1 -Wl,--as-needed -Wl,--sort-common"
 
