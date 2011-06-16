@@ -1,7 +1,7 @@
-Features::Default.define('gmp') {
-  description 'Adds support for development/library/gmp (GNU MP library)'
+description 'Adds support for development/library/gmp (GNU MP library)'
 
-  before :dependencies do |deps|
-    deps << 'development/library/gmp' if enabled?
-  end
-}
+before :dependencies do |deps|
+  deps.set {
+    depends_on 'development/library/gmp' if enabled?
+  }
+end

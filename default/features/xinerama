@@ -1,7 +1,7 @@
-Features::Default.define('xinerama') {
-  description 'Add support for the xinerama X11 extension, which allows you to stretch your display across multiple monitors'
+description 'Add support for the xinerama X11 extension, which allows you to stretch your display across multiple monitors'
 
-  before :dependencies do |deps|
-    deps << 'x11/library/Xinerama' << 'x11/protocol/xinerama!' if enabled?
-  end
-}
+before :dependencies do |deps|
+  deps.set {
+    depends_on 'x11/library/Xinerama', 'x11/protocol/xinerama!' if enabled?
+  }
+end

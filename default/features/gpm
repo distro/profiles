@@ -1,7 +1,7 @@
-Features::Default.define('gpm') {
-  description 'Adds support for system/library/gpm (Console-based mouse driver)'
+description 'Adds support for system/library/gpm (Console-based mouse driver)'
 
-  before :dependencies do |deps|
-    deps << 'system/library/gpm' if enabled?
-  end
-}
+before :dependencies do |deps|
+  deps.set {
+    depends_on 'system/library/gpm' if enabled?
+  }
+end

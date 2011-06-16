@@ -1,7 +1,7 @@
-Features::Default.define('python') {
-  description 'Adds support/bindings for the Python language'
+description 'Adds support/bindings for the Python language'
 
-  before :dependencies do |deps|
-    deps << 'application/development/interpreter/python' if enabled?
-  end
-}
+before :dependencies do |deps|
+  deps.set {
+    depends_on 'application/development/interpreter/python' if enabled?
+  }
+end

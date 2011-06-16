@@ -1,7 +1,7 @@
-Features::Default.define('ruby') {
-  description 'Adds support/bindings for the Ruby language'
+description 'Adds support/bindings for the Ruby language'
 
-  before :dependencies do |deps|
-    deps << 'application/development/interpreter/ruby' if enabled?
-  end
-}
+before :dependencies do |deps|
+  deps.set {
+    depends_on 'application/development/interpreter/ruby' if enabled?
+  }
+end

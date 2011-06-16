@@ -1,7 +1,7 @@
-Features::Default.define('perl') {
-  description 'Adds support/bindings for the Perl language'
+description 'Adds support/bindings for the Perl language'
 
-  before :dependencies do |deps|
-    deps << 'application/development/interpreter/perl' if enabled?
-  end
-}
+before :dependencies do |deps|
+  deps.set {
+    depends_on 'application/development/interpreter/perl' if enabled?
+  }
+end

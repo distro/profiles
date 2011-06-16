@@ -1,7 +1,7 @@
-Features::Default.define('nls') {
-  description 'Adds Native Language Support (using gettext - GNU locale utilities)'
+description 'Adds Native Language Support (using gettext - GNU locale utilities)'
 
-  before :dependencies do |deps|
-    deps << 'system/development/gettext' if enabled?
-  end
-}
+before :dependencies do |deps|
+  deps.set {
+    depends_on 'system/development/gettext' if enabled?
+  }
+end

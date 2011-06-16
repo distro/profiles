@@ -1,7 +1,7 @@
-Features::Default.define('caps') {
-  description 'Use Linux capabilities library to control privilege'
+description 'Use Linux capabilities library to control privilege'
 
-  before :dependencies do |deps|
-    deps << 'system/library/libcap' if enabled?
-  end
-}
+before :dependencies do |deps|
+  deps.set {
+    depends_on 'system/library/libcap' if enabled?
+  }
+end

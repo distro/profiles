@@ -1,7 +1,7 @@
-Features::Default.define('gdbm') {
-  description 'Adds support for system/library/database/gnu (GNU database libraries)'
+description 'Adds support for system/library/database/gnu (GNU database libraries)'
 
-  before :dependencies do |deps|
-    deps << 'system/library/database/gnu' if enabled?
-  end
-}
+before :dependencies do |deps|
+  deps.set {
+    depends_on 'system/library/database/gnu' if enabled?
+  }
+end

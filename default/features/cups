@@ -1,7 +1,7 @@
-Features::Default.define('cups') {
-  description 'Add support for CUPS (Common Unix Printing System)'
+description 'Add support for CUPS (Common Unix Printing System)'
 
-  before :dependencies do |deps|
-    deps << 'network/printing/cups' if enabled?
-  end
-}
+before :dependencies do |deps|
+  deps.set {
+    depends_on 'network/printing/cups' if enabled?
+  }
+end
